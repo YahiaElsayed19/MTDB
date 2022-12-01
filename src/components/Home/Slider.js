@@ -33,6 +33,10 @@ const Slider = () => {
         <>
             <div className={classes.slider}>
                 <div className={classes.container}>
+                    <div className={classes.head}>
+                        <div>Trending Movies</div>
+                        <Link>See more</Link>
+                    </div>
                     <Splide
                         options={{
                             autoWidth: true,
@@ -45,6 +49,10 @@ const Slider = () => {
             </div>
             <div className={classes.slider}>
                 <div className={classes.container}>
+                    <div className={classes.head}>
+                        <div>Trending TV Shows</div>
+                        <Link>See more</Link>
+                    </div>
                     <Splide
                         options={{
                             autoWidth: true,
