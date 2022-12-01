@@ -48,7 +48,7 @@
 }
 @media (max-width: 485px) {
     .item img{
-        height: 100px;
+        height: 150px;
     }
 }
 .item .name{
