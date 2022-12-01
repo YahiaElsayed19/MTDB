@@ -33,9 +33,10 @@ const Slider = () => {
         <>
             <div className={classes.slider}>
                 <div className={classes.container}>
-                    <Splide className={classes.splide}
+                    <Splide
                         options={{
-                            perPage: 3,
+                            autoWidth: true,
+                            pagination: false,
                             perMove: 3,
                         }}>
                         {moviesResult}
@@ -44,8 +45,10 @@ const Slider = () => {
             </div>
             <div className={classes.slider}>
                 <div className={classes.container}>
-                    <Splide className={classes.splide}
+                    <Splide
                         options={{
+                            autoWidth: true,
+                            pagination: false,
                             perPage: 3,
                             perMove: 3,
                         }}>
