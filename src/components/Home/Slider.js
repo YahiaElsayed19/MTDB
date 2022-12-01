@@ -36,7 +36,7 @@ const Slider = () => {
                     <Splide className={classes.splide}
                         options={{
                             perPage: 3,
-                            perMove: 2,
+                            perMove: 3,
                         }}>
                         {moviesResult}
                     </Splide>
