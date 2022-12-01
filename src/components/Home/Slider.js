@@ -21,31 +21,36 @@ const Slider = () => {
     }
     let tvResult
     if (!isLoadingTv) {
-            tvResult = tvShows.data.results.map(tvShow =>
-                <SplideSlide key={tvShow.id} className={classes.item}>
-                    <img src={`https://image.tmdb.org/t/p/w500/${tvShow['poster_path']}`} alt='poster'></img>
-                    <div className={classes.name}>{tvShow.name} ({tvShow['first_air_date'].slice(0, 4)})</div>
-                </SplideSlide>
-            );
-        }
-        return (
-            <>
-            <Splide className={classes.container}
-                options={{
-                    perPage: 3,
-                    perMove: 3,
-                }}>
-                {moviesResult}
-            </Splide>
-            <Splide className={classes.container}
-                options={{
-                    perPage: 3,
-                    perMove: 3,
-                }}>
-                {tvResult}
-            </Splide>
-            </>
-        )
+        tvResult = tvShows.data.results.map(tvShow =>
+            <SplideSlide key={tvShow.id} className={classes.item}>
+                <img src={`https://image.tmdb.org/t/p/w500/${tvShow['poster_path']}`} alt='poster'></img>
+                <div className={classes.name}>{tvShow.name} ({tvShow['first_air_date'].slice(0, 4)})</div>
+            </SplideSlide>
+        );
     }
+    return (
+        <>
+            <div className={classes.slider}>
+                <Splide className={classes.container}
+                    options={{
+                        perPage: 3,
+                        perMove: 3,
+                    }}>
+                    {moviesResult}
+                </Splide>
+            </div>
+            <div className={classes.slider}>
 
-    export default Slider
+                <Splide className={classes.container}
+                    options={{
+                        perPage: 3,
+                        perMove: 3,
+                    }}>
+                    {tvResult}
+                </Splide>
+            </div>
+        </>
+    )
+}
+
+export default Slider
