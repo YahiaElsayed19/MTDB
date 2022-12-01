@@ -59,7 +59,7 @@
 @media (max-width: 768px) {
     .item img {
         width: 90%;
-        height: 200px;
+        height: 170px;
     }
     .item .name {
         font-size: 12px;
