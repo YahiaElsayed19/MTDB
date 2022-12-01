@@ -65,6 +65,7 @@ input:focus {
     padding: 0;
     height: 210px;
     overflow-y: scroll;
+    z-index:100;
 }
 
 .categories::-webkit-scrollbar {
