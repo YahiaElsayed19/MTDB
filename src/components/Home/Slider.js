@@ -3,6 +3,7 @@ import GetData from '../API/getData'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import classes from './Slider.module.css'
+import { Link } from 'react-router-dom';
 const Slider = () => {
     const { data: movies, isLoading: isLoadingMovies } = useQuery([`movie`], () =>
         GetData("movie")
