@@ -1,9 +1,14 @@
-.container {
-    padding: 30px 15px;
-    margin: 100px auto;
-    background-color: #202020;
-    border-radius: 12px;
+.slider {
+    margin: 100px 30px;
+}
 
+.container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #202020;
+    border-radius: 24px;
 }
 
 @media (min-width: 768px) {
@@ -56,11 +61,12 @@
 
 @media (max-width: 485px) {
     .item img {
-        height: 150px;
+        height: 130px;
     }
 }
 
 .item .name {
     text-align: center;
     color: #f6f6f6;
+    font-size: 14px;
 }
