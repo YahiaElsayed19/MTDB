@@ -32,23 +32,26 @@ const Slider = () => {
     return (
         <>
             <div className={classes.slider}>
-                <Splide className={classes.container}
-                    options={{
-                        perPage: 3,
-                        perMove: 2,
-                    }}>
-                    {moviesResult}
-                </Splide>
+                <div className={classes.container}>
+                    <Splide className={classes.splide}
+                        options={{
+                            perPage: 3,
+                            perMove: 2,
+                        }}>
+                        {moviesResult}
+                    </Splide>
+                </div>
             </div>
             <div className={classes.slider}>
-
-                <Splide className={classes.container}
-                    options={{
-                        perPage: 3,
-                        perMove: 3,
-                    }}>
-                    {tvResult}
-                </Splide>
+                <div className={classes.container}>
+                    <Splide className={classes.splide}
+                        options={{
+                            perPage: 3,
+                            perMove: 3,
+                        }}>
+                        {tvResult}
+                    </Splide>
+                </div>
             </div>
         </>
     )
