@@ -3,6 +3,7 @@ import { useInfiniteQuery } from "react-query";
 import getData from "../components/API/getData";
 import Item from "../components/Home/Item";
 import classes from "./MoviesTvPage.module.css";
+import GoToTop from '../Helpers/GoToTop'
 
 const TvShowsPage = () => {
     const { data: tvShows, isLoading, fetchNextPage } = useInfiniteQuery(
@@ -30,7 +31,10 @@ const TvShowsPage = () => {
             loadMore()
         }
     }
-    return <div className={classes.container}>{tvShowsResult}</div>;
+    return<>
+    <div className={classes.container}>{tvShowsResult}</div>
+    <GoToTop/>
+    </> 
 };
 
 export default TvShowsPage;
