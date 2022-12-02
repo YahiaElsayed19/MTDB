@@ -12,7 +12,7 @@ const ItemPage = () => {
     const { title, year, image, description, stars, ids } = extractData(data, type)
     const genres = extractGenres(ids, type)
     const itemGenere = genres.map(genre =>
-        <li>{genre}</li>)
+        <li key={new Date()}>{genre}</li>)
     return (
         <>
             <div className={classes['item-page']}>
