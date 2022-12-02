@@ -5,9 +5,9 @@ import extractData from '../API/extractData'
 const Item = (props) => {
     const { title, year, image } = extractData(props.result, props.type)
     return (
-        <Link>
+        <Link to={`/${props.type}/${title}/`} state={{ itemData: props.result, itemType: props.type }}>
             <div className={classes.item}>
-                <img src={image} alt={title}/>
+                <img src={image} alt={title} />
                 <div className={classes.name}>{title} ({year})</div>
             </div>
         </Link>
