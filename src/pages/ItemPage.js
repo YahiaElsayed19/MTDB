@@ -6,7 +6,7 @@ const ItemPage = () => {
     const location = useLocation()
     const data = location.state.itemData;
     const type = location.state.itemType;
-    const { title, year, image, description } = extractData(data, type)
+    const { title, year, image, description ,stars} = extractData(data, type)
     return (
         <>
             <div>
@@ -20,6 +20,9 @@ const ItemPage = () => {
             </div>
             <div>
                 {description}
+            </div>
+            <div>
+                {stars}
             </div>
         </>
     )
