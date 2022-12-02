@@ -40,6 +40,7 @@
     color: #0b56c7;
     margin: 10px 10px 30px;
     position: relative;
+    font-weight: bold;
 }
 .head::after{
     content: "";
@@ -56,6 +57,7 @@
 .head a {
     color: #0b56c7;
     text-decoration: none;
+    font-weight: normal;
 }
 .head a:hover{
     color: #0b56c7;
