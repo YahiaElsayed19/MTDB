@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
 import ItemPage from './pages/ItemPage';
+import MoviesPage from './pages/MoviesPage';
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Navigate replace to="/home" />} />
         <Route path='/home' element={<HomePage />} />
         <Route path='/:type/:name' element={<ItemPage />} />
+        <Route path='/home/movies' element={<MoviesPage />} />
       </Routes>
       <ReactQueryDevtools />
     </QueryClientProvider>
