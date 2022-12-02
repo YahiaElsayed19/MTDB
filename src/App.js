@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
 import ItemPage from './pages/ItemPage';
 import MoviesPage from './pages/MoviesPage';
+import TvShowsPage from './pages/TvShowsPage';
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/home' element={<HomePage />} />
         <Route path='/:type/:name' element={<ItemPage />} />
         <Route path='/home/movies' element={<MoviesPage />} />
+        <Route path='/home/tvshows' element={<TvShowsPage />} />
       </Routes>
       <ReactQueryDevtools />
     </QueryClientProvider>

@@ -4,10 +4,10 @@ import getData from "../components/API/getData";
 import Item from "../components/Home/Item";
 import classes from "./MoviesTvPage.module.css";
 
-const MoviesPage = () => {
-    const { data: movies, isLoading, fetchNextPage } = useInfiniteQuery(
-        "AllMovies",
-        ({ pageParam = 1 }) => getData("movie", pageParam),
+const TvShowsPage = () => {
+    const { data: tvShows, isLoading, fetchNextPage } = useInfiniteQuery(
+        "AllTvShows",
+        ({ pageParam = 1 }) => getData("tv", pageParam),
         {
             getNextPageParam: (lastPage) => {
                 return lastPage.data.page < lastPage.data["total_pages"]
@@ -16,11 +16,11 @@ const MoviesPage = () => {
             },
         }
     );
-    let movieResult;
+    let tvShowsResult;
     if (!isLoading) {
-        movieResult = movies?.pages.map((page) =>
-            page.data.results.map((movie) => (
-                <Item key={movie.id} result={movie} type="movie" />
+        tvShowsResult = tvShows?.pages.map((page) =>
+            page.data.results.map((tvShow) => (
+                <Item key={tvShow.id} result={tvShow} type="tv" />
             ))
         );
     }
@@ -30,7 +30,7 @@ const MoviesPage = () => {
             loadMore()
         }
     }
-    return <div className={classes.container}>{movieResult}</div>;
+    return <div className={classes.container}>{tvShowsResult}</div>;
 };
 
-export default MoviesPage;
+export default TvShowsPage;
