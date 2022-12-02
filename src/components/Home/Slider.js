@@ -35,7 +35,7 @@ const Slider = () => {
                 <div className={classes.container}>
                     <div className={classes.head}>
                         <div>Trending Movies</div>
-                        <Link>See more</Link>
+                        <Link to='/home/movies'>See more</Link>
                     </div>
                     <Splide
                         options={{
@@ -51,7 +51,7 @@ const Slider = () => {
                 <div className={classes.container}>
                     <div className={classes.head}>
                         <div>Trending Tv Shows</div>
-                        <Link>See more</Link>
+                        <Link to="/home/tvshows">See more</Link>
                     </div>
                     <Splide
                         options={{
