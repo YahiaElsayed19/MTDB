@@ -15,8 +15,10 @@ const Slider = () => {
     if (!isLoadingMovies) {
         moviesResult = movies.data.results.map(movie =>
             <SplideSlide key={movie.id} className={classes.item}>
-                <img src={`https://image.tmdb.org/t/p/w500/${movie['poster_path']}`} alt='poster'></img>
-                <div className={classes.name}>{movie.title} ({movie['release_date'].slice(0, 4)})</div>
+                <Link>
+                    <img src={`https://image.tmdb.org/t/p/w500/${movie['poster_path']}`} alt='poster'></img>
+                    <div className={classes.name}>{movie.title} ({movie['release_date'].slice(0, 4)})</div>
+                </Link>
             </SplideSlide>
         );
     }
@@ -24,8 +26,10 @@ const Slider = () => {
     if (!isLoadingTv) {
         tvResult = tvShows.data.results.map(tvShow =>
             <SplideSlide key={tvShow.id} className={classes.item}>
-                <img src={`https://image.tmdb.org/t/p/w500/${tvShow['poster_path']}`} alt='poster'></img>
-                <div className={classes.name}>{tvShow.name} ({tvShow['first_air_date'].slice(0, 4)})</div>
+                <Link>
+                    <img src={`https://image.tmdb.org/t/p/w500/${tvShow['poster_path']}`} alt='poster'></img>
+                    <div className={classes.name}>{tvShow.name} ({tvShow['first_air_date'].slice(0, 4)})</div>
+                </Link>
             </SplideSlide>
         );
     }
@@ -41,7 +45,7 @@ const Slider = () => {
                         options={{
                             autoWidth: true,
                             pagination: false,
-                            perMove: 3,
+                            perMove: 2,
                         }}>
                         {moviesResult}
                     </Splide>
@@ -58,7 +62,7 @@ const Slider = () => {
                             autoWidth: true,
                             pagination: false,
                             perPage: 3,
-                            perMove: 3,
+                            perMove: 2,
                         }}>
                         {tvResult}
                     </Splide>
