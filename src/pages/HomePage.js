@@ -1,9 +1,9 @@
 import React from 'react'
 import Slider from '../components/Home/Slider'
-const Home = () => {
+const HomePage = () => {
     return (
         <Slider />
     )
 }
 
-export default Home
+export default HomePage
