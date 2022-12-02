@@ -25,7 +25,7 @@ const Slider = () => {
     if (!isLoadingTv) {
         tvResult = tvShows.data.results.map((tvShow) => (
             <SplideSlide key={tvShow.id}>
-                <Item result={tvShow} type="tvshow"/>
+                <Item result={tvShow} type="tv"/>
             </SplideSlide>
         ));
     }

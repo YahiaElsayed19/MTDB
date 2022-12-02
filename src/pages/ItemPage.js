@@ -2,6 +2,8 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import extractData from '../components/API/extractData'
 import extractGenres from '../components/API/extractGenres'
+import classes from './ItemPage.module.css'
+import GoToTop from '../Helpers/GoToTop'
 
 const ItemPage = () => {
     const location = useLocation()
@@ -9,26 +11,20 @@ const ItemPage = () => {
     const type = location.state.itemType;
     const { title, year, image, description, stars, ids } = extractData(data, type)
     const genres = extractGenres(ids, type)
+    const itemGenere = genres.map(genre =>
+        <li>{genre}</li>)
     return (
         <>
-            <div>
-                {title}
+            <div className={classes['item-page']}>
+                <div className={classes.container}>
+                    <h3>{title} ({year})</h3>
+                    <p className={classes.star}>{stars}⭐</p>
+                    <img src={image} alt={title} />
+                    <ul className={classes.genres}> {itemGenere} </ul>
+                    <p className={classes.des}>{description}</p>
+                </div>
             </div>
-            <div>
-                {year}
-            </div>
-            <div>
-                <img src={image} alt={title} />
-            </div>
-            <div>
-                {description}
-            </div>
-            <div>
-                {stars}
-            </div>
-            <div>
-                {genres}
-            </div>
+            <GoToTop />
         </>
     )
 }
