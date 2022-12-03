@@ -1,0 +1,52 @@
+.mobile-nav {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav .icon {
+    color: black;
+    right: 5%;
+    cursor: pointer;
+}
+
+@media (min-width:800px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 74px;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 0;
+    z-index: 100;
+}
+
+
+.mobile-nav ul li {
+    display: inline-block;
+    padding: 15px;
+
+}
+.mobile-nav ul li:hover {
+    background-color: #eee;
+}
+.mobile-nav ul li:hover a{
+    color: #0b56c7;
+}
+
+.mobile-nav ul li:not(:last-child) {
+    border-bottom: 2px solid #eee;
+}
+
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    padding-right: 70%;
+}
+
