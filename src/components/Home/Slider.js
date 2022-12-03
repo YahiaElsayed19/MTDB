@@ -8,51 +8,42 @@ import Item from "./Item";
 import getTopRated from "../API/getTopRated";
 
 const Slider = () => {
-    const { data: movies, isLoading: isLoadingMovies } = useQuery([`movie`], () =>
+    const { data: movies } = useQuery([`movie`], () =>
         GetData("movie")
     );
-    const { data: tvShows, isLoading: isLoadingTv } = useQuery([`tv`], () =>
+    const { data: tvShows} = useQuery([`tv`], () =>
         GetData("tv")
     );
-    const { data: topMovies, isLoading: isLoadingTopMovies } = useQuery([`topmovie`], () =>
+    const { data: topMovies } = useQuery([`topmovie`], () =>
     getTopRated("movie")
 );
-const { data: topTvShows, isLoading: isLoadingTopTv } = useQuery([`toptv`], () =>
+const { data: topTvShows } = useQuery([`toptv`], () =>
 getTopRated("tv")
 );
 
-    let moviesResult;
-    if (!isLoadingMovies) {
-        moviesResult = movies.data.results.map((movie) => (
+        let  moviesResult = movies?.data.results.map((movie) => (
             <SplideSlide key={movie.id}>
                 <Item result={movie} type="movie" />
             </SplideSlide>
         ));
-    }
-    let tvResult;
-    if (!isLoadingTv) {
-        tvResult = tvShows.data.results.map((tvShow) => (
+    
+        let  tvResult = tvShows?.data.results.map((tvShow) => (
             <SplideSlide key={tvShow.id}>
                 <Item result={tvShow} type="tv"/>
             </SplideSlide>
         ));
-    }
-    let topMoviesResult;
-    if (!isLoadingTopMovies) {
-        topMoviesResult = topMovies.data.results.map((movie) => (
+    
+        let  topMoviesResult = topMovies?.data.results.map((movie) => (
             <SplideSlide key={movie.id}>
                 <Item result={movie} type="movie" />
             </SplideSlide>
         ));
-    }
-    let topTvResult;
-    if (!isLoadingTopTv) {
-        topTvResult = topTvShows.data.results.map((tvShow) => (
+    
+        let  topTvResult = topTvShows?.data.results.map((tvShow) => (
             <SplideSlide key={tvShow.id}>
                 <Item result={tvShow} type="tv"/>
             </SplideSlide>
         ));
-    }
 
     return (
         <>

@@ -17,14 +17,13 @@ const TopRatedMovies = () => {
             },
         }
     );
-    let movieResult;
-    if (!isLoading) {
-        movieResult = movies?.pages.map((page) =>
-            page.data.results.map((movie) => (
-                <Item key={movie.id} result={movie} type="movie" />
-            ))
-        );
-    }
+
+    let movieResult = movies?.pages.map((page) =>
+        page.data.results.map((movie) => (
+            <Item key={movie.id} result={movie} type="movie" />
+        ))
+    );
+
     const loadMore = () => fetchNextPage()
     window.onscroll = function () {
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight) {

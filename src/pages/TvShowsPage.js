@@ -17,14 +17,13 @@ const TvShowsPage = () => {
             },
         }
     );
-    let tvShowsResult;
-    if (!isLoading) {
-        tvShowsResult = tvShows?.pages.map((page) =>
+
+        let   tvShowsResult = tvShows?.pages.map((page) =>
             page.data.results.map((tvShow) => (
                 <Item key={tvShow.id} result={tvShow} type="tv" />
             ))
         );
-    }
+    
     const loadMore = () => fetchNextPage()
     window.onscroll = function () {
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight) {
