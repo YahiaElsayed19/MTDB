@@ -8,6 +8,7 @@ import GoToTop from '../Helpers/GoToTop'
 
 const TvShowsPage = () => {
     const [searchQuery, setSearchQuery] = useState(null)
+    const [loading, setLaoding] = useState()
     const onChangeHandler = (e) => {
         setSearchQuery(e.target.value)
     }
@@ -36,12 +37,14 @@ const TvShowsPage = () => {
             loadMore()
         }
     }
+    setLaoding(isFetchingNextPage)
+
     return <>
         <div className={classes.search}>
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{tvShowsResult}</div>
-        {isFetchingNextPage && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
+        {loading && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
         <GoToTop />
     </>
 };
