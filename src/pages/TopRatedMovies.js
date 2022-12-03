@@ -41,6 +41,7 @@ const TopRatedMovies = () => {
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{movieResult}</div>
+        {isFetchingNextPage && <span className={classes.loader}></span>}
         <GoToTop />
     </>
 };

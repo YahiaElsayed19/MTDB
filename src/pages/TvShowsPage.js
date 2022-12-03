@@ -41,6 +41,7 @@ const TvShowsPage = () => {
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{tvShowsResult}</div>
+        {isFetchingNextPage && <span className={classes.loader}></span>}
         <GoToTop />
     </>
 };

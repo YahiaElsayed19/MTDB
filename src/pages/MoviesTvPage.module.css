@@ -47,3 +47,32 @@ input {
 }
 
 
+.loader {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    position: relative;
+    background: #eee;
+    box-shadow: -24px 0 #eee, 24px 0 #eee;
+    box-sizing: border-box;
+    animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+    33% {
+        background: #eee;
+        box-shadow: -24px 0 #0b56c7, 24px 0 #eee;
+    }
+
+    66% {
+        background: #0b56c7;
+        box-shadow: -24px 0 #eee, 24px 0 #eee;
+    }
+
+    100% {
+        background: #eee;
+        box-shadow: -24px 0 #eee, 24px 0 #0b56c7;
+    }
+}
