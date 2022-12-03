@@ -92,7 +92,7 @@ getTopRated("tv")
                 <div className={classes.container}>
                     <div className={classes.head}>
                         <div>Top Rated Movies</div>
-                        <Link to="/home/topratedmovies">See more</Link>
+                        <Link to="/home/top-rated-movies">See more</Link>
                     </div>
                     <Splide
                         options={{
@@ -108,7 +108,7 @@ getTopRated("tv")
                 <div className={classes.container}>
                     <div className={classes.head}>
                         <div>Top Rated Tv Shows</div>
-                        <Link to="/home/topratedtvshows">See more</Link>
+                        <Link to="/home/top-rated-tvshows">See more</Link>
                     </div>
                     <Splide
                         options={{

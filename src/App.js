@@ -21,8 +21,8 @@ function App() {
         <Route path='/:type/:name' element={<ItemPage />} />
         <Route path='/home/movies' element={<MoviesPage />} />
         <Route path='/home/tvshows' element={<TvShowsPage />} />
-        <Route path='/home/topratedmovies' element={<TopRatedMovies />} />
-        <Route path='/home/topratedtvshows' element={<TopRatedTv />} />
+        <Route path='/home/top-rated-movies' element={<TopRatedMovies />} />
+        <Route path='/home/top-rated-tvshows' element={<TopRatedTv />} />
       </Routes>
       <ReactQueryDevtools />
     </QueryClientProvider>
