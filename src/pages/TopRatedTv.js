@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useInfiniteQuery } from "react-query";
 import getTopRated from '../components/API/getTopRated'
+import searchData from "../components/API/searchData";
 import Item from "../components/Home/Item";
 import classes from "./MoviesTvPage.module.css";
 import GoToTop from '../Helpers/GoToTop'
 
 const TopRatedTv = () => {
+    const [searchQuery, setSearchQuery] = useState(null)
+    const onChangeHandler = (e) => {
+        setSearchQuery(e.target.value)
+    }
+
+
     const { data: tvShows, isLoading, fetchNextPage } = useInfiniteQuery(
-        "AllTopTvShows",
-        ({ pageParam = 1 }) => getTopRated("tv", pageParam),
+        `AllTopTvShows ${searchQuery}`,
+        ({ pageParam = 1 }) => searchQuery ? searchData('tv', searchQuery, pageParam) : getTopRated("tv", pageParam),
         {
             getNextPageParam: (lastPage) => {
                 return lastPage.data.page < lastPage.data["total_pages"]
@@ -29,6 +36,9 @@ const TopRatedTv = () => {
         }
     }
     return <>
+        <div className={classes.search}>
+            <input type='text' placeholder="search" onChange={onChangeHandler} />
+        </div>
         <div className={classes.container}>{tvShowsResult}</div>
         <GoToTop />
     </>
