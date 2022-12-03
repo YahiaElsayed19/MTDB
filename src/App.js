@@ -9,6 +9,7 @@ import MoviesPage from './pages/MoviesPage';
 import TvShowsPage from './pages/TvShowsPage';
 import TopRatedMovies from './pages/TopRatedMovies';
 import TopRatedTv from './pages/TopRatedTv';
+import SearchResluts from './pages/SearchResluts';
 
 function App() {
   const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ function App() {
         <Route path='/home/tvshows' element={<TvShowsPage />} />
         <Route path='/home/top-rated-movies' element={<TopRatedMovies />} />
         <Route path='/home/top-rated-tvshows' element={<TopRatedTv />} />
+        <Route path='/search-results/:searchQuery' element={<SearchResluts />} />
       </Routes>
       <ReactQueryDevtools />
     </QueryClientProvider>

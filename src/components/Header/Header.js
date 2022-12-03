@@ -2,16 +2,22 @@ import React, { useState } from 'react'
 import classes from './Header.module.css'
 import { HiMenu } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
+import { BiSearch } from 'react-icons/bi'
 const Header = () => {
     const [visible, setVisible] = useState(false)
     const menuHandler = () => {
         setVisible(prevState => !prevState)
     }
+    const [searchQuery, setSearchQuery] = useState("")
+    const searchHandler = (e) => {
+        setSearchQuery(e.target.value)
+    }
     return (
         <header className={classes.header}>
             <Link to="/home" className={classes.logo}> Movies</Link>
             <div className={classes.search}>
-                <input type="text" placeholder='search' />
+                <input type="text" placeholder='search' onChange={searchHandler} />
+                <Link to={`search-results/${searchQuery}`} state={{ searchQuery }}><BiSearch className={classes['search-icon']} /></Link>
             </div>
             <div className={classes.menu}>
                 <HiMenu size="30px" className={classes.icon} onClick={menuHandler} />
