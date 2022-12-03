@@ -11,7 +11,7 @@ const MoviesPage = () => {
     const onChangeHandler = (e) => {
         setSearchQuery(e.target.value)
     }
-    const { data: movies, isLoading, fetchNextPage } = useInfiniteQuery(
+    const { data: movies, fetchNextPage,isFetchingNextPage } = useInfiniteQuery(
         `allMovies ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData("movie", searchQuery, pageParam) : getData("movie", pageParam),
         {
@@ -40,7 +40,7 @@ const MoviesPage = () => {
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{movieResult}</div>
-        {isLoading && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
+        {isFetchingNextPage && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
         <GoToTop />
     </>
 };

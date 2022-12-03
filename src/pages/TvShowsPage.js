@@ -12,7 +12,7 @@ const TvShowsPage = () => {
         setSearchQuery(e.target.value)
     }
 
-    const { data: tvShows, isLoading, fetchNextPage } = useInfiniteQuery(
+    const { data: tvShows, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(
         `AllTvShows ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData('tv', searchQuery, pageParam) : getData("tv", pageParam),
         {
@@ -41,7 +41,7 @@ const TvShowsPage = () => {
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{tvShowsResult}</div>
-        {isLoading && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
+        {isFetchingNextPage && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
         <GoToTop />
     </>
 };

@@ -13,7 +13,7 @@ const TopRatedTv = () => {
     }
 
 
-    const { data: tvShows, isLoading, fetchNextPage } = useInfiniteQuery(
+    const { data: tvShows, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(
         `AllTopTvShows ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData('tv', searchQuery, pageParam) : getTopRated("tv", pageParam),
         {
@@ -40,7 +40,7 @@ const TopRatedTv = () => {
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{tvShowsResult}</div>
-        {isLoading && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
+        {isFetchingNextPage && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
         <GoToTop />
     </>
 };
