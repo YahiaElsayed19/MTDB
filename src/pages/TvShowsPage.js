@@ -41,7 +41,6 @@ const TvShowsPage = () => {
             <input type='text' placeholder="search" onChange={onChangeHandler} />
         </div>
         <div className={classes.container}>{tvShowsResult}</div>
-        {isFetchingNextPage && <div class="lds-ring"><div></div><div></div><div></div><div></div></div>}
         <GoToTop />
     </>
 };
