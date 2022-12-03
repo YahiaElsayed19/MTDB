@@ -7,6 +7,9 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import ItemPage from './pages/ItemPage';
 import MoviesPage from './pages/MoviesPage';
 import TvShowsPage from './pages/TvShowsPage';
+import TopRatedMovies from './pages/TopRatedMovies';
+import TopRatedTv from './pages/TopRatedTv';
+
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -18,6 +21,8 @@ function App() {
         <Route path='/:type/:name' element={<ItemPage />} />
         <Route path='/home/movies' element={<MoviesPage />} />
         <Route path='/home/tvshows' element={<TvShowsPage />} />
+        <Route path='/home/topratedmovies' element={<TopRatedMovies />} />
+        <Route path='/home/topratedtvshows' element={<TopRatedTv />} />
       </Routes>
       <ReactQueryDevtools />
     </QueryClientProvider>
