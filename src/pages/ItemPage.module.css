@@ -40,16 +40,18 @@
     margin-top: 0;
 }
 
-img {
+.item-page img {
     width: 350px;
     height: 350px;
     max-width: 100%;
     border-radius: 6px;
 }
-.genres{
+
+.genres {
     padding: 0;
     margin: 0;
 }
+
 .genres li {
     text-align: center;
     list-style: none;
@@ -60,7 +62,8 @@ img {
     color: #fff;
     background-color: #0b56c7;
 }
-.des{
+
+.des {
     font-size: 18px;
     line-height: 1.5;
 }

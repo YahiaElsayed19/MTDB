@@ -11,6 +11,7 @@ a {
     width: 150px;
     height: 225px;
     object-fit: cover;
+    border-radius: 6px;
 }
 
 .item .name {
