@@ -16,3 +16,6 @@
         display: none;
     }
 }
+a.active{
+    border-bottom: 3px solid #0b56c7;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
+import classes from './NavLinks.module.css'
 const Links = (props) => {
 
     const onClickHandler = () => {
@@ -28,25 +28,25 @@ const Links = (props) => {
                 initial='hidden'
                 animate='visible'
                 transition={{ delay: 0.3 }}>
-                <Link to="/home/movies">Movies</Link>
+                <NavLink to="/home/movies" className={(navData) => navData.isActive ? `${classes.active}` : ''}>Movies</NavLink>
             </motion.li>
             <motion.li onClick={onClickHandler} variants={listVariant}
                 initial='hidden'
                 animate='visible'
                 transition={{ delay: 0.4 }}>
-                <Link to="/home/tvshows">Tv Shows</Link>
+                <NavLink to="/home/tvshows" className={(navData) => navData.isActive ? `${classes.active}` : ''}>Tv Shows</NavLink>
             </motion.li >{" "}
             <motion.li onClick={onClickHandler} variants={listVariant}
                 initial='hidden'
                 animate='visible'
                 transition={{ delay: 0.5 }}>
-                <Link to="/home/top-rated-movies">Top Rated Movies</Link>
+                <NavLink to="/home/top-rated-movies" className={(navData) => navData.isActive ? `${classes.active}` : ''}>Top Rated Movies</NavLink>
             </motion.li>
             <motion.li onClick={onClickHandler} variants={listVariant}
                 initial='hidden'
                 animate='visible'
                 transition={{ delay: 0.6 }}>
-                <Link to="/home/top-rated-tvshows">Top Rated Tv Shows</Link>
+                <NavLink to="/home/top-rated-tvshows" className={(navData) => navData.isActive ? `${classes.active}` : ''}>Top Rated Tv Shows</NavLink>
             </motion.li>
         </motion.ul>
     )
