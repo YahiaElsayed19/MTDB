@@ -1,0 +1,33 @@
+.head {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #0b56c7;
+    margin: 10px 10px 30px;
+    position: relative;
+}
+
+.head::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -17px;
+    width: 100%;
+    height: 1px;
+    background-color: #0b56c7;
+}
+
+.head h3 {
+    margin: 0;
+}
+
+.head a {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    transition-duration: 0.3s;
+}
+
+.head a:hover {
+    color: #0b56c7;
+}

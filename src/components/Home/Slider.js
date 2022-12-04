@@ -3,9 +3,9 @@ import GetData from "../API/getData";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import classes from "./Slider.module.css";
-import { Link } from "react-router-dom";
 import Item from "./Item";
 import getTopRated from "../API/getTopRated";
+import Head from "./Head";
 
 const Slider = () => {
     const { data: movies } = useQuery([`movie`], () =>
@@ -49,10 +49,7 @@ const Slider = () => {
         <>
             <div className={classes.slider}>
                 <div className={classes.container}>
-                    <div className={classes.head}>
-                        <div>Trending Movies</div>
-                        <Link to='/home/movies'>See more</Link>
-                    </div>
+                    <Head title="Trending Movies" link="/home/movies" />
                     <Splide
                         options={{
                             autoWidth: true,
@@ -65,10 +62,7 @@ const Slider = () => {
             </div>
             <div className={classes.slider}>
                 <div className={classes.container}>
-                    <div className={classes.head}>
-                        <div>Trending Tv Shows</div>
-                        <Link to="/home/tvshows">See more</Link>
-                    </div>
+                    <Head title="Trending Tv Shows" link="/home/tvshows" />
                     <Splide
                         options={{
                             autoWidth: true,
@@ -81,10 +75,7 @@ const Slider = () => {
             </div>
             <div className={classes.slider}>
                 <div className={classes.container}>
-                    <div className={classes.head}>
-                        <div>Top Rated Movies</div>
-                        <Link to="/home/top-rated-movies">See more</Link>
-                    </div>
+                    <Head title="Top Rated Movies" link="/home/top-rated-movies" />
                     <Splide
                         options={{
                             autoWidth: true,
@@ -97,10 +88,7 @@ const Slider = () => {
             </div>
             <div className={`${classes.slider} ${classes.last}`}>
                 <div className={classes.container}>
-                    <div className={classes.head}>
-                        <div>Top Rated Tv Shows</div>
-                        <Link to="/home/top-rated-tvshows">See more</Link>
-                    </div>
+                    <Head title="Top Rated Tv Shows" link="/home/top-rated-tvshows" />
                     <Splide
                         options={{
                             autoWidth: true,
