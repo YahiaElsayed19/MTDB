@@ -2,18 +2,22 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import extractData from '../components/API/extractData'
 import extractGenres from '../components/API/extractGenres'
+import getTrailers from '../components/API/getTrailers'
 import classes from './ItemPage.module.css'
 import GoToTop from '../Helpers/GoToTop'
 import YouTube from 'react-youtube'
+import { useQuery } from 'react-query'
 
 const ItemPage = () => {
     const location = useLocation()
     const data = location.state.itemData;
     const type = location.state.itemType;
-    const { title, year, image, description, stars, ids } = extractData(data, type)
+    const { id, title, year, image, description, stars, ids } = extractData(data, type)
     const genres = extractGenres(ids, type)
     const itemGenere = genres.map(genre =>
         <li key={Math.random() * 1000}>{genre}</li>)
+    const { data: videosData } = useQuery("get videos", () => getTrailers(type, id))
+    const videoId = videosData?.data.results[0].key
     return (
         <>
             <div className={classes['item-page']}>
@@ -29,7 +33,7 @@ const ItemPage = () => {
                         <p className={classes.des}>{description}</p>
                     </div>
                 </div>
-                <YouTube videoId="I9B6rwW35GQ" />
+                <YouTube videoId={videoId} />
             </div>
             <GoToTop />
         </>
