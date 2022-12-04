@@ -18,6 +18,10 @@ const ItemPage = () => {
         <li key={Math.random() * 1000}>{genre}</li>)
     const { data: videosData } = useQuery("get videos", () => getVideos(type, id))
     const videoId = videosData?.data.results[0].key
+    const opts = {
+        height:'390',
+        width: '100%',
+    }
     return (
         <>
             <div className={classes['item-page']}>
@@ -31,9 +35,11 @@ const ItemPage = () => {
                         <ul className={classes.genres}> {itemGenere} </ul>
                         <h3 className={classes['des-title']}>Short Description</h3>
                         <p className={classes.des}>{description}</p>
+                        <div className={classes.video}>
+                            <YouTube videoId={videoId} opts={opts}/>
+                        </div>
                     </div>
                 </div>
-                <YouTube videoId={videoId} className={classes.video} />
             </div>
             <GoToTop />
         </>
