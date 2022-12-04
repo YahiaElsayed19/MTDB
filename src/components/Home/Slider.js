@@ -11,39 +11,39 @@ const Slider = () => {
     const { data: movies } = useQuery([`movie`], () =>
         GetData("movie")
     );
-    const { data: tvShows} = useQuery([`tv`], () =>
+    const { data: tvShows } = useQuery([`tv`], () =>
         GetData("tv")
     );
     const { data: topMovies } = useQuery([`topmovie`], () =>
-    getTopRated("movie")
-);
-const { data: topTvShows } = useQuery([`toptv`], () =>
-getTopRated("tv")
-);
+        getTopRated("movie")
+    );
+    const { data: topTvShows } = useQuery([`toptv`], () =>
+        getTopRated("tv")
+    );
 
-        let  moviesResult = movies?.data.results.map((movie) => (
-            <SplideSlide key={movie.id}>
-                <Item result={movie} type="movie" />
-            </SplideSlide>
-        ));
-    
-        let  tvResult = tvShows?.data.results.map((tvShow) => (
-            <SplideSlide key={tvShow.id}>
-                <Item result={tvShow} type="tv"/>
-            </SplideSlide>
-        ));
-    
-        let  topMoviesResult = topMovies?.data.results.map((movie) => (
-            <SplideSlide key={movie.id}>
-                <Item result={movie} type="movie" />
-            </SplideSlide>
-        ));
-    
-        let  topTvResult = topTvShows?.data.results.map((tvShow) => (
-            <SplideSlide key={tvShow.id}>
-                <Item result={tvShow} type="tv"/>
-            </SplideSlide>
-        ));
+    let moviesResult = movies?.data.results.map((movie) => (
+        <SplideSlide key={movie.id}>
+            <Item result={movie} type="movie" />
+        </SplideSlide>
+    ));
+
+    let tvResult = tvShows?.data.results.map((tvShow) => (
+        <SplideSlide key={tvShow.id}>
+            <Item result={tvShow} type="tv" />
+        </SplideSlide>
+    ));
+
+    let topMoviesResult = topMovies?.data.results.map((movie) => (
+        <SplideSlide key={movie.id}>
+            <Item result={movie} type="movie" />
+        </SplideSlide>
+    ));
+
+    let topTvResult = topTvShows?.data.results.map((tvShow) => (
+        <SplideSlide key={tvShow.id}>
+            <Item result={tvShow} type="tv" />
+        </SplideSlide>
+    ));
 
     return (
         <>
@@ -95,7 +95,7 @@ getTopRated("tv")
                     </Splide>
                 </div>
             </div>
-            <div className={classes.slider}>
+            <div className={`${classes.slider} ${classes.last}`}>
                 <div className={classes.container}>
                     <div className={classes.head}>
                         <div>Top Rated Tv Shows</div>
