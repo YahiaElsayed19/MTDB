@@ -13,7 +13,7 @@ const TvShowsPage = () => {
     }
 
     const { data: tvShows, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(
-        `AllTvShows ${searchQuery}`,
+        `AllTvShows/ ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData('tv', searchQuery, pageParam) : getData("tv", pageParam),
         {
             getNextPageParam: (lastPage) => {

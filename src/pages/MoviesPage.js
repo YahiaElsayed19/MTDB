@@ -12,7 +12,7 @@ const MoviesPage = () => {
         setSearchQuery(e.target.value)
     }
     const { data: movies, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
-        `allMovies ${searchQuery}`,
+        `allMovies/ ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData("movie", searchQuery, pageParam) : getData("movie", pageParam),
         {
             getNextPageParam: (lastPage) => {

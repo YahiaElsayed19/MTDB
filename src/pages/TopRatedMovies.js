@@ -13,7 +13,7 @@ const TopRatedMovies = () => {
     }
 
     const { data: movies, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(
-        `AllTopRatedMovies ${searchQuery}`,
+        `AllTopRatedMovies/ ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData("movie", searchQuery, pageParam) : getTopRated("movie", pageParam),
         {
             getNextPageParam: (lastPage) => {

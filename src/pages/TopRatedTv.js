@@ -14,7 +14,7 @@ const TopRatedTv = () => {
 
 
     const { data: tvShows, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(
-        `AllTopTvShows ${searchQuery}`,
+        `AllTopTvShows/ ${searchQuery}`,
         ({ pageParam = 1 }) => searchQuery ? searchData('tv', searchQuery, pageParam) : getTopRated("tv", pageParam),
         {
             getNextPageParam: (lastPage) => {
