@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import extractData from '../components/API/extractData'
 import extractGenres from '../components/API/extractGenres'
-import getTrailers from '../components/API/getTrailers'
+import getVideos from '../components/API/getVideos'
 import classes from './ItemPage.module.css'
 import GoToTop from '../Helpers/GoToTop'
 import YouTube from 'react-youtube'
@@ -16,7 +16,7 @@ const ItemPage = () => {
     const genres = extractGenres(ids, type)
     const itemGenere = genres.map(genre =>
         <li key={Math.random() * 1000}>{genre}</li>)
-    const { data: videosData } = useQuery("get videos", () => getTrailers(type, id))
+    const { data: videosData } = useQuery("get videos", () => getVideos(type, id))
     const videoId = videosData?.data.results[0].key
     return (
         <>
@@ -33,7 +33,7 @@ const ItemPage = () => {
                         <p className={classes.des}>{description}</p>
                     </div>
                 </div>
-                <YouTube videoId={videoId} />
+                <YouTube videoId={videoId} className={classes.video} />
             </div>
             <GoToTop />
         </>
