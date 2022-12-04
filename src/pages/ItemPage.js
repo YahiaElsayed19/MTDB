@@ -4,6 +4,7 @@ import extractData from '../components/API/extractData'
 import extractGenres from '../components/API/extractGenres'
 import classes from './ItemPage.module.css'
 import GoToTop from '../Helpers/GoToTop'
+import YouTube from 'react-youtube'
 
 const ItemPage = () => {
     const location = useLocation()
@@ -28,6 +29,7 @@ const ItemPage = () => {
                         <p className={classes.des}>{description}</p>
                     </div>
                 </div>
+                <YouTube videoId="I9B6rwW35GQ" />
             </div>
             <GoToTop />
         </>
