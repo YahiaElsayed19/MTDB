@@ -17,11 +17,16 @@ const ItemPage = () => {
         <>
             <div className={classes['item-page']}>
                 <div className={classes.container}>
-                    <h3>{title} ({year})</h3>
-                    <p className={classes.star}>{stars}⭐</p>
-                    <img src={image} alt={title} />
-                    <ul className={classes.genres}> {itemGenere} </ul>
-                    <p className={classes.des}>{description}</p>
+                    <div className={classes.left}>
+                        <img src={image} alt={title} />
+                        <h3>{title} ({year})</h3>
+                        <p className={classes.star}>{stars}⭐</p>
+                    </div>
+                    <div className={classes.right}>
+                        <ul className={classes.genres}> {itemGenere} </ul>
+                        <h3 className={classes['des-title']}>Short Description</h3>
+                        <p className={classes.des}>{description}</p>
+                    </div>
                 </div>
             </div>
             <GoToTop />
