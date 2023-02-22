@@ -1,6 +1,6 @@
 # MTDB
 
-It's complete movies and tv shows database website.
+### It's complete movies and tv shows database website.
 
 ### built using:
 
@@ -9,4 +9,4 @@ It's complete movies and tv shows database website.
 ![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![React](https://img.shields.io/badge/React-61dafb?style=for-the-badge&logo=react&logoColor=black)
 
-You can try it from [here](https://mtdb.vercel.app/home)
+### You can try it from [here](https://mtdb.vercel.app/home)
